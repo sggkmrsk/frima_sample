@@ -19,9 +19,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
   def update
-    binding.pry
     @item = Item.find(params[:id])
     @item.update(item_update_params)
+    redirect_to edit_item_path(@item.id)
   end
 
   private
@@ -33,7 +33,6 @@ class ItemsController < ApplicationController
 
   def item_update_params
     params.require(:item).permit(
-      :title,
-      [images_attributes: [:image, :_destroy, :id]])
+      :title,[images_attributes: [:image, :_destroy, :id]])
   end
 end
