@@ -11,7 +11,6 @@
           %p 最大5枚までアップロードできます
           .post__drop__box__container
             .prev-content
-
               //JSで挿入したhtmlと同じ形　each文でのプレビュー表示
               - @item.images.each do |image|
                 .preview-box
@@ -24,13 +23,11 @@
                       .delete-btn
                         %span 削除
             .label-content
-
               //プレビューの数に合わせてforオプションを指定
               = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
                 %pre.label-box__text-visible クリックしてファイルをアップロード
             .hidden-content
               = f.fields_for :images do |i|
-
                 //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
                 = i.file_field :image, class: "hidden-field"
                 = i.check_box:_destroy, class: "hidden-checkbox"
