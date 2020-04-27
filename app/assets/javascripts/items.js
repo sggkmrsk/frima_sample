@@ -39,7 +39,6 @@ $(document).on('turbolinks:load', function(){
 
     //プレビューの追加=================================================================
     $(document).on('change', '.hidden-field', function() {
-      setLabel();
       //hidden-fieldのidの数値のみ取得
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
       //選択したfileのオブジェクトを取得
