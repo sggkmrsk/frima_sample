@@ -16,19 +16,18 @@
                 %pre.label-box__text-visible クリックしてファイルをアップロード
             .hidden-content
               = f.fields_for :images ,multiple: true do |i|
-                = i.file_field :image, class: "hidden-field"
+                = i.file_field :image,class:"hidden-field"
                 %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
                 %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
                 %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
                 %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
         .sell__block__form__name
           .form-group__name
-            %label
+            %h3.sell__block__form__upload__head
               商品名
               %span.require 必須
             %div
               = f.text_field :title, placeholder:"商品名（必須 40文字まで)",class: "form__group__name"
-
         .sell__block__form__btn
           %div
             = f.submit "出品する",class: "btn-default__btn-red"
