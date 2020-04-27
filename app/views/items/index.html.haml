@@ -1,0 +1,9 @@
+.main
+  .contents
+  - @items.each do |item|
+    .content
+      = link_to edit_item_path(item.id) do
+        = image_tag item.images.first.image.url,class:"content__image"
+        .content__info
+          %h3.content__info--title
+            = item.title
